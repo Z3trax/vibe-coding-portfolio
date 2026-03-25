@@ -7,6 +7,7 @@
 
 ## Планируемые проекты
 - [ ] Консольный калькулятор на Python
+- [ ] Интерфес для калькулятора 
 - [ ] Telegram-бот (echo / aiogram)
 - [ ] Парсер новостей (BeautifulSoup)
 - [ ] REST API (FastAPI, CRUD)
@@ -17,7 +18,7 @@
 
 ## Стек
 - Python, JavaScript
-- VS Code + AI-ассистенты
+- VS Code + AI-ассистенты + Codex
 - Git, GitHub
 
 ## Как пользоваться
