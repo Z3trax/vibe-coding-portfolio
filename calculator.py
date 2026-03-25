@@ -1,16 +1,19 @@
-# Функция для сложения двух чисел
+# Консольный калькулятор на Python
+# Программа запрашивает два числа и оператор, вычисляет результат и обрабатывает ошибки
+
+# Функция для сложения
 def add(a, b):
     return a + b
 
-# Функция для вычитания двух чисел
+# Функция для вычитания
 def subtract(a, b):
     return a - b
 
-# Функция для умножения двух чисел
+# Функция для умножения
 def multiply(a, b):
     return a * b
 
-# Функция для деления двух чисел с проверкой на деление на ноль
+# Функция для деления
 def divide(a, b):
     if b == 0:
         raise ZeroDivisionError("Деление на ноль невозможно")
@@ -23,25 +26,14 @@ def main():
         try:
             # Запрашиваем первое число
             num1 = float(input("Введите первое число: "))
-        except ValueError:
-            print("Ошибка: Введите корректное число.")
-            continue
 
-        # Запрашиваем оператор
-        operator = input("Введите оператор (+, -, *, /): ").strip()
-        if operator not in ['+', '-', '*', '/']:
-            print("Ошибка: Неверный оператор. Используйте +, -, *, /.")
-            continue
+            # Запрашиваем оператор
+            operator = input("Введите оператор (+, -, *, /): ")
 
-        try:
             # Запрашиваем второе число
             num2 = float(input("Введите второе число: "))
-        except ValueError:
-            print("Ошибка: Введите корректное число.")
-            continue
 
-        try:
-            # Выполняем операцию
+            # Выполняем операцию в зависимости от оператора
             if operator == '+':
                 result = add(num1, num2)
             elif operator == '-':
@@ -50,15 +42,21 @@ def main():
                 result = multiply(num1, num2)
             elif operator == '/':
                 result = divide(num1, num2)
+            else:
+                raise ValueError("Неверный оператор. Используйте +, -, *, /")
 
             # Выводим результат
             print(f"Результат: {result}")
-        except ZeroDivisionError as e:
+
+        except ValueError as e:
+            # Обрабатываем ошибки ввода чисел или неверного оператора
             print(f"Ошибка: {e}")
-            continue
+        except ZeroDivisionError as e:
+            # Обрабатываем деление на ноль
+            print(f"Ошибка: {e}")
 
         # Спрашиваем, хочет ли пользователь продолжить
-        continue_calc = input("Хотите продолжить? (да/нет): ").strip().lower()
+        continue_calc = input("Хотите продолжить? (да/нет): ").lower()
         if continue_calc != 'да':
             print("Спасибо за использование калькулятора!")
             break
