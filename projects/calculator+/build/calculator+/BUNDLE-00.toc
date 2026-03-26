@@ -1,0 +1,3 @@
+([('calculator+',
+   '/Users/maxims/Documents/Projects/calculator+/dist/calculator+',
+   'EXECUTABLE')],)
