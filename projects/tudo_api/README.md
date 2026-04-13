@@ -1,10 +1,10 @@
 # Todo List API
 
-REST API для управления списком задач (Todo list) на FastAPI с хранением данных в JSON файле.
+REST API для управления списком задач (Todo list) на FastAPI с хранением данных в SQLite БД.
 
 ## Функциональность
 
-- Получение списка всех задач
+- Получение списка всех задач с пагинацией и фильтрацией
 - Получение задачи по ID
 - Создание новой задачи
 - Обновление существующей задачи
@@ -15,7 +15,7 @@ REST API для управления списком задач (Todo list) на 
 - FastAPI
 - Pydantic
 - Uvicorn
-- JSON для хранения данных
+- SQLite для хранения данных
 
 ## Запуск
 
@@ -29,6 +29,11 @@ REST API для управления списком задач (Todo list) на 
    python main.py
    ```
 
+   Или с автоперезагрузкой:
+   ```bash
+   uvicorn main:app --reload
+   ```
+
 Сервер будет доступен по адресу `http://0.0.0.0:8000`.
 
 ## Документация API
@@ -37,7 +42,8 @@ REST API для управления списком задач (Todo list) на 
 
 ## Эндпоинты
 
-- `GET /tasks` - Получить все задачи
+- `GET /tasks` - Получить все задачи с пагинацией и фильтрацией
+  - Параметры: `skip` (int), `limit` (int), `done` (bool, опционально)
 - `GET /tasks/{id}` - Получить задачу по ID
 - `POST /tasks` - Создать новую задачу
 - `PUT /tasks/{id}` - Обновить задачу
@@ -52,4 +58,42 @@ REST API для управления списком задач (Todo list) на 
 
 ## Хранение данных
 
-Данные хранятся в файле `tasks.json` в корневой папке проекта.
+Данные хранятся в БД SQLite `tasks.db` с таблицей `tasks`:
+```sql
+CREATE TABLE tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    done BOOLEAN DEFAULT FALSE
+)
+```
+
+## Примеры запросов
+
+### Получить все задачи
+```bash
+curl http://localhost:8000/tasks
+```
+
+### Получить невыполненные задачи
+```bash
+curl "http://localhost:8000/tasks?done=false"
+```
+
+### Создать новую задачу
+```bash
+curl -X POST http://localhost:8000/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Купить молоко", "done": false}'
+```
+
+### Обновить задачу
+```bash
+curl -X PUT http://localhost:8000/tasks/1 \
+  -H "Content-Type: application/json" \
+  -d '{"done": true}'
+```
+
+### Удалить задачу
+```bash
+curl -X DELETE http://localhost:8000/tasks/1
+```

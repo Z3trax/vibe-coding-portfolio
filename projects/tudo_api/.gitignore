@@ -125,12 +125,10 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
-.pyre/
-
-# IDE
-.vscode/
-.idea/
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
 # OS
 .DS_Store
