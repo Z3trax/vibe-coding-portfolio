@@ -25,7 +25,7 @@
   Парсинг новостей с сохранением в CSV/JSON.  
   [Код](projects/news_parser)
 - [x] **Todo REST API (FastAPI)**  
-  CRUD-сервис для управления задачами с хранением в JSON.  
+  CRUD-сервис с пагинацией, фильтрацией и хранением в SQLite.  
   [Код](projects/tudo_api)
 
 ## Стек
