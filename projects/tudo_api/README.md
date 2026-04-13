@@ -21,7 +21,7 @@ REST API для управления списком задач (Todo list) на 
 
 1. Установите зависимости:
    ```bash
-   pip install fastapi pydantic uvicorn
+   pip install -r requirements.txt
    ```
 
 2. Запустите сервер:
