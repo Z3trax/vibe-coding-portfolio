@@ -26,7 +26,7 @@
   [Код](projects/news_parser)
 - [x] **Todo REST API (FastAPI)**  
   CRUD-сервис для управления задачами с хранением в JSON.  
-  [Код](projects/todo_api)
+  [Код](projects/tudo_api)
 
 ## Стек
 - Python, JavaScript
