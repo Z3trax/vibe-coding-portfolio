@@ -1,0 +1,352 @@
+/* ===== Переменные для светлой/тёмной темы ===== */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f7fa;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
+    --accent-color: #6366f1;
+    --accent-hover: #4f46e5;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Тёмная тема */
+body.dark-theme {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #404040;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Общие стили ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    background-attachment: fixed;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Карточка таймера ===== */
+.timer-card {
+    background: var(--bg-primary);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Заголовок ===== */
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+/* ===== Секция ввода ===== */
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+}
+
+.input-field {
+    width: 70px;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-field::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Стрелки счётчика скрыты */
+.input-field::-webkit-outer-spin-button,
+.input-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.separator {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+/* ===== Секция отображения таймера ===== */
+.display-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+}
+
+.timer-display {
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.status-message {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-height: 24px;
+    margin-top: 10px;
+}
+
+.status-message.success {
+    color: var(--success-color);
+}
+
+.status-message.warning {
+    color: var(--warning-color);
+}
+
+.status-message.alert {
+    color: var(--danger-color);
+    animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ===== Секция кнопок ===== */
+.button-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: 0;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Кнопка Старт */
+.btn-start {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+}
+
+.btn-start:hover:not(:disabled) {
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Кнопка Пауза */
+.btn-pause {
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+}
+
+.btn-pause:hover:not(:disabled) {
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.4);
+}
+
+/* Кнопка Сброс */
+.btn-reset {
+    background: linear-gradient(135deg, var(--danger-color), #dc2626);
+}
+
+.btn-reset:hover:not(:disabled) {
+    box-shadow: 0 5px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* ===== Тумблер темы ===== */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.toggle-label:hover {
+    color: var(--accent-color);
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 480px) {
+    .timer-card {
+        padding: 25px 20px;
+    }
+
+    .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .timer-display {
+        font-size: 56px;
+    }
+
+    .input-section {
+        gap: 10px;
+    }
+
+    .input-field {
+        width: 60px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .button-section {
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .timer-card {
+        padding: 20px 15px;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .timer-display {
+        font-size: 48px;
+    }
+
+    .input-group label {
+        font-size: 10px;
+    }
+
+    .separator {
+        font-size: 24px;
+    }
+}

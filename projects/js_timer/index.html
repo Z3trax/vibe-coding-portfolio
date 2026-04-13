@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер обратного отсчёта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-card">
+            <!-- Заголовок -->
+            <h1 class="title">Таймер</h1>
+
+            <!-- Поля для ввода -->
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="minutes">Минуты:</label>
+                    <input 
+                        type="number" 
+                        id="minutes" 
+                        min="0" 
+                        max="59" 
+                        value="1"
+                        placeholder="МИН"
+                        class="input-field"
+                    >
+                </div>
+                <div class="separator">:</div>
+                <div class="input-group">
+                    <label for="seconds">Секунды:</label>
+                    <input 
+                        type="number" 
+                        id="seconds" 
+                        min="0" 
+                        max="59" 
+                        value="0"
+                        placeholder="СЕК"
+                        class="input-field"
+                    >
+                </div>
+            </div>
+
+            <!-- Дисплей таймера -->
+            <div class="display-section">
+                <div class="timer-display" id="timerDisplay">01:00</div>
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+
+            <!-- Кнопки управления -->
+            <div class="button-section">
+                <button class="btn btn-start" id="startBtn">Старт</button>
+                <button class="btn btn-pause" id="pauseBtn" disabled>Пауза</button>
+                <button class="btn btn-reset" id="resetBtn">Сброс</button>
+            </div>
+
+            <!-- Тумблер для темной темы -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="themeToggle" class="toggle-checkbox">
+                <label for="themeToggle" class="toggle-label">🌙 Тёмная тема</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
