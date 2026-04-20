@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфолио начинающего разработчика - Python, JavaScript, FastAPI, AI">
+    <meta name="theme-color" content="#1a1a2e">
+    
+    <title>Портфолио - Разработчик</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-icon">💻</span>
+                        <span class="logo-text">Portfolio</span>
+                    </div>
+                    
+                    <!-- Мобильное меню кнопка -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <!-- Навигационное меню -->
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#about" class="nav-link">Обо мне</a></li>
+                        <li><a href="#projects" class="nav-link">Проекты</a></li>
+                        <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Главное содержимое -->
+    <main>
+        <!-- Секция "Обо мне" -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1 class="section-title">Привет! 👋</h1>
+                        <p class="about-description">
+                            Я начинающий разработчик, увлечённый вайб-кодингом и созданием полезных приложений. 
+                            Изучаю <strong>Python</strong> и <strong>JavaScript</strong>, работаю с фреймворком <strong>FastAPI</strong> 
+                            для создания REST API. Активно экспериментирую с <strong>AI-инструментами</strong> для ускорения разработки.
+                        </p>
+                        <p class="about-description">
+                            На этом сайте ты найдёшь мои проекты, которые демонстрируют мой прогресс и умения в разработке.
+                        </p>
+                        <div class="about-skills">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">FastAPI</span>
+                            <span class="skill-badge">HTML/CSS</span>
+                            <span class="skill-badge">REST API</span>
+                            <span class="skill-badge">AI Tools</span>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="avatar-placeholder">
+                            <span>👨‍💻</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Проекты" -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title">Мои проекты</h2>
+                <p class="section-subtitle">Вот некоторые работы, в которых я применял свои навыки</p>
+                
+                <div class="projects-grid">
+                    <!-- Проект 1: Калькулятор -->
+                    <article class="project-card">
+                        <div class="project-icon">🧮</div>
+                        <h3 class="project-title">Продвинутый калькулятор</h3>
+                        <p class="project-description">
+                            Консольный и графический калькулятор с поддержкой сложных выражений и истории вычислений.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Tkinter</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio/tree/main/projects/calculator+" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+
+                    <!-- Проект 2: Парсер новостей -->
+                    <article class="project-card">
+                        <div class="project-icon">📰</div>
+                        <h3 class="project-title">Парсер новостей</h3>
+                        <p class="project-description">
+                            Приложение для парсинга новостных сайтов и сохранения статей с фильтрацией по ключевым словам.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">Requests</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio/tree/main/projects/news_parser" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+
+                    <!-- Проект 3: Телеграм-бот -->
+                    <article class="project-card">
+                        <div class="project-icon">🤖</div>
+                        <h3 class="project-title">Телеграм-бот</h3>
+                        <p class="project-description">
+                            Интерактивный бот для Telegram с командами, обработкой сообщений и интеграцией с API.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">python-telegram-bot</span>
+                            <span class="tech-tag">API</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio/tree/main/projects/telegram_bot" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+
+                    <!-- Проект 4: Todo REST API -->
+                    <article class="project-card">
+                        <div class="project-icon">✅</div>
+                        <h3 class="project-title">Todo REST API</h3>
+                        <p class="project-description">
+                            REST API для управления задачами с полной CRUD операциями, аутентификацией и SQLite базой.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio/tree/main/projects/tudo_api" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+
+                    <!-- Проект 5: Интерактивный таймер -->
+                    <article class="project-card">
+                        <div class="project-icon">⏱️</div>
+                        <h3 class="project-title">Интерактивный таймер</h3>
+                        <p class="project-description">
+                            Веб-приложение с визуализацией времени, плавной анимацией и адаптивным дизайном.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">Web API</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio/tree/main/projects/js_timer" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+
+                    <!-- Дополнительный проект: Портфолио сайт -->
+                    <article class="project-card">
+                        <div class="project-icon">🌐</div>
+                        <h3 class="project-title">Портфолио сайт</h3>
+                        <p class="project-description">
+                            Этот сайт! Современный, адаптивный портфолио с плавной прокруткой и чистым кодом.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/Z3trax/vibe-coding-portfolio" class="btn btn-primary" target="_blank">
+                            Просмотр кода
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Контакты" -->
+        <section id="contacts" class="section contacts">
+            <div class="container">
+                <h2 class="section-title">Давай поговорим! 💬</h2>
+                <p class="section-subtitle">Найди меня в социальных сетях или напиши на почту</p>
+                
+                <div class="contacts-grid">
+                        <a href="https://github.com/Z3trax" class="contact-card" target="_blank">
+                        <div class="contact-icon">🐙</div>
+                        <h3>GitHub</h3>
+                        <p>Смотри мои проекты</p>
+                    </a>
+                    
+                    <a href="https://t.me/username" class="contact-card" target="_blank">
+                        <div class="contact-icon">✈️</div>
+                        <h3>Telegram</h3>
+                        <p>Пиши мне сообщение</p>
+                    </a>
+                    
+                    <a href="mailto:your.email@example.com" class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>Отправь письмо</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Мой портфолио. Создано с ❤️ любовью к кодингу.</p>
+                <p class="footer-tech">Сделано на HTML, CSS и JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
