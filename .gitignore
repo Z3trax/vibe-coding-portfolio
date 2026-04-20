@@ -1,0 +1,10 @@
+# Node dependencies
+node_modules
+
+# MacOS files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
